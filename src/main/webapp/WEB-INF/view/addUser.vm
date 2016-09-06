@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+#parse("showAllUsers.vm")
+<form action="save" method="post">
+姓名：<input type="text" name="userName"><br><br>
+电话：<input type="text" name="tel"><br><br>
+年龄：<input type="text" name="age"><br><br>
+所在城市：<input type="text" name="address.cityName"><br><br>
+所在街道：<input type="text" name="address.roadName"><br><br>
+门牌号：<input type="text" name="address.doorNo"><br><br>
+<input type="submit" value="添加">
+</form>
+</body>
+</html>

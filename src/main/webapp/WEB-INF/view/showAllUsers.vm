@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    #set($page_title="showAllUsers")  
+  用户信息：                         添加用户：<a href="toSave">添加</a>
+  <table border="1">
+  <tr>
+  <th>ID</th>
+  <th>姓名</th>
+  <th>电话</th>
+  <th>年龄</th>
+  <th>所在城市</th>
+  <th>所在街道</th>
+  <th>门牌号</th>
+  <th colspan="2">操作</th>
+  </tr>
+     #foreach($user in $list)
+      <tr>
+   <td>${user.userId}</td>
+   <td>${user.userName}</td>
+   <td>$user.tel</td>
+   <td>$user.age</td>
+   <td>$user.address.cityName</td>
+   <td>$user.address.roadName</td>
+   <td>$user.address.doorNo</td>
+   <td><a href="delete/$user.userId">删除用户</a></td>
+   <td><a href="toUpdate/$user.userId">更新用户</a></td>
+      </tr>
+     #end  
+  </table>
+  #set($size = $list.size())
+#foreach($user in $list)
+  #if($velocityCount == 1)
+    this is first value
+  #end
+  #if($velocityCount == $size)
+    this is last value
+  #end
+  $user.userId
+#end
+</body>
+</html>

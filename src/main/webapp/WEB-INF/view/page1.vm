@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+##页面注释
+     #set($page_title="Layout Test")  
+    Hello Velocity Layout!  <br>
+    #set($arr=[0..20])
+    #foreach($i in $arr) 
+    #if($velocityCount==3)
+     #break 
+    #end
+      
+   ${i}is
+ 
+    #end
+    ${cookie.name}
+    
+ #if(true)
+   $sdsd
+#elseif(false)
+   $sdsd
+#end 
+　#set( $list = ["a", "b", "c"])
+
+　　#foreach ($item in $list)
+
+　　$item
+
+　　#end
+$order.createTime<br/>
+ $date.year - $date.month - $date.day <br/>
+</body>
+</html>

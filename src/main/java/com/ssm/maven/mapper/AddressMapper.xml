@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+
+
+<mapper namespace="com.ssm.maven.mapper.AddressMapper">
+	<resultMap id="BaseResultMap" type="com.ssm.maven.entity.Address">
+		<id column="addressId" property="addressId" jdbcType="INTEGER" />
+		<result column="city_name" property="cityName" jdbcType="VARCHAR" />
+		<result column="road_name" property="roadName" jdbcType="VARCHAR" />
+		<result column="doorNo" property="doorNo" jdbcType="VARCHAR" />
+	</resultMap>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from address_t
+		where addressId = #{addressId,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="addressId" parameterType="com.ssm.maven.entity.Address">
+		insert into address_t (city_name,road_name,doorNo)
+		values (#{cityName,jdbcType=VARCHAR}, #{roadName,jdbcType=VARCHAR},
+		#{doorNo,jdbcType=VARCHAR})
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.ssm.maven.entity.Address">
+		update address_t
+		set city_name = #{cityName,jdbcType=VARCHAR},
+		road_name = #{roadName,jdbcType=VARCHAR},
+		doorNo = #{doorNo,jdbcType=VARCHAR}
+		where addressId = #{addressId,jdbcType=INTEGER}
+	</update>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		SELECT addressId,city_name,road_name,doorNo FROM address_t WHERE
+		addressId=#{addressId,jdbcType=INTEGER}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select addressId, city_name, road_name, doorNo
+		from address_t
+	</select>
+</mapper>

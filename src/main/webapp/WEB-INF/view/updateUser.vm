@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="updateInfo" method="post">
+<input type="hidden" name="userId" value="$user.userId">
+<input type="hidden" name="address.addressId" value="$user.address.addressId">
+姓名：<input type="text" name="userName" value="$user.userName"><br><br>
+电话：<input type="text" name="tel" value="$user.tel"><br><br>
+年龄：<input type="text" name="age" value="$user.age"><br><br>
+所在城市：<input type="text" name="address.cityName" value="$user.address.cityName"><br><br>
+所在街道：<input type="text" name="address.roadName" value="$user.address.roadName"><br><br>
+门牌号：<input type="text" name="address.doorNo" value="$user.address.doorNo"><br><br>
+<input type="submit" value="更新">
+</form>
+ 
+</body>
+</html>
